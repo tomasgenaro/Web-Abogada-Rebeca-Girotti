@@ -55,9 +55,24 @@ dd {
   text-wrap: pretty;
 }
 
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
 .editorial-line {
   display: block;
   max-width: 100%;
+  text-wrap: pretty;
+}
+
+@media (min-width: 641px) {
+  .about-content .editorial-line,
+  .process-card .editorial-line,
+  .contact .editorial-line {
+    text-wrap: balance;
+  }
 }
 
 body.menu-open {

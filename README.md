@@ -1,4 +1,4 @@
-# Estudio Dra. Rebeca Girotti — versión 1.10.1
+# Estudio Dra. Rebeca Girotti — versión 1.10.4
 
 Sitio institucional estático, mobile-first y sin dependencias de producción. Está desarrollado con HTML5 semántico, CSS3 y JavaScript puro, listo para alojarse en GitHub Pages, Cloudflare Pages, Netlify o Vercel.
 
@@ -10,7 +10,33 @@ Sitio institucional estático, mobile-first y sin dependencias de producción. E
 - SEO técnico básico: metadatos, Open Graph, JSON-LD, `robots.txt` y `sitemap.xml`.
 - Navegación accesible, foco visible, menú móvil con control de teclado y soporte para `prefers-reduced-motion`.
 
-## Cambios de la versión 1.10.1
+## Cambios de la versión 1.10.4
+
+- Completa la revisión editorial final sin modificar el diseño aprobado.
+- Precisa la descripción de “Procesos ejecutivos” y su relación con la documentación correspondiente.
+- Mantiene la voz individual de Rebeca en el texto de Modalidad.
+
+## Mejoras heredadas de la versión 1.10.3
+
+- Realiza una revisión ortográfica, gramatical y ortotipográfica completa del contenido público.
+- Mejora la presentación profesional de “Sobre mí” sin alterar la información aprobada por la clienta.
+- Corrige construcciones poco naturales en Modalidad, Contacto y el llamado complementario de Servicios.
+- Unifica la voz del sitio en primera persona singular para representar la atención directa de Rebeca.
+- Presenta la matrícula como “Tomo XII · Folio 302 · CADJM” para facilitar su lectura.
+- Corrige la puntuación de todos los mensajes predeterminados de WhatsApp.
+- Actualiza la redacción pública de Privacidad y elimina expresiones propias de un borrador interno.
+- Añade balance tipográfico en títulos y bloques editoriales para evitar líneas viudas en escritorio.
+- Conserva la identidad visual, la estructura, las áreas de práctica y el comportamiento responsive.
+
+## Mejoras heredadas de la versión 1.10.2
+
+- Reemplaza el área “Divorcios” por “Usucapión”, con descripción, icono y consulta de WhatsApp específicos.
+- Actualiza “Sobre mí” con una presentación más personal, clara y profesional.
+- Renueva el cierre de contacto con la pregunta “¿Hablamos sobre tu caso?” y un llamado a la acción más cercano.
+- Actualiza la descripción SEO para incorporar usucapión y retirar la referencia independiente a divorcios.
+- Conserva sin cambios la estructura, la identidad visual y el comportamiento responsive de la versión anterior.
+
+## Mejoras heredadas de la versión 1.10.1
 
 - Conserva íntegramente el diseño, las proporciones, la tipografía y la redacción de la versión 1.10.
 - Corrige únicamente cortes incómodos en el hero, “Sobre mí”, áreas de práctica, modalidad y contacto.
@@ -43,7 +69,7 @@ Sitio institucional estático, mobile-first y sin dependencias de producción. E
 ## Mejoras heredadas de la versión 1.7
 
 - En escritorio, el título de “Áreas de práctica” queda fijado en dos renglones: “Asesoramiento enfocado” y “en cada situación.”.
-- Las siglas de las seis tarjetas fueron reemplazadas por iconos vectoriales propios y diferentes para procesos ejecutivos, familia, divorcios, sucesiones, jubilaciones y contratos.
+- Las siglas de las seis tarjetas fueron reemplazadas por iconos vectoriales propios y diferentes para cada área de práctica.
 - “Sobre mí” incorpora una decoración abstracta realizada íntegramente con CSS, sin fotografías ni archivos visuales adicionales.
 - El botón principal del hero continúa sin incorporar un logotipo de WhatsApp.
 

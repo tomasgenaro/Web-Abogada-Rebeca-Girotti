@@ -10,7 +10,7 @@ test("incluye la estructura principal y contenido real", async () => {
   for (const id of ["inicio", "estudio", "servicios", "modalidad", "contacto"]) {
     assert.match(html, new RegExp(`id=["']${id}["']`));
   }
-  assert.match(html, /T° XII F° 302 CADJM/);
+  assert.match(html, /Tomo XII · Folio 302 · CADJM/);
   assert.match(html, /Necochea 244, Chivilcoy/);
 });
 
@@ -47,18 +47,59 @@ test("aplica la redacción solicitada y conserva los saltos móviles", async () 
   assert.doesNotMatch(css, /\.mobile-copy|\.desktop-copy/);
 });
 
-test("mejora los cortes editoriales sin rediseñar ni reescribir el sitio", async () => {
+test("mejora los cortes editoriales sin alterar el diseño", async () => {
   const html = await read("index.html");
   const css = await read("css/styles.css");
-  assert.match(html, /Acompañamiento jurídico presencial en Chivilcoy y consultas virtuales,<\/span>/);
-  assert.match(html, /Cada consulta comienza por escuchar la situación,<\/span>/);
-  assert.match(html, /Escribí por WhatsApp para solicitar una consulta\.<\/span>/);
-  assert.match(html, /de&nbsp;la&nbsp;Universidad de Lomas de Zamora/);
+  assert.match(html, /Atención jurídica presencial en Chivilcoy y a distancia,<\/span>/);
+  assert.match(html, /Mi forma de trabajar parte de una premisa fundamental:<\/span>/);
+  assert.match(html, /Si necesitás asesoramiento legal,<\/span>/);
+  assert.match(html, /escribime para coordinar una consulta\.<\/span>/);
   assert.match(css, /\.editorial-line\s*\{[\s\S]*?display:\s*block/);
   assert.match(css, /@media \(max-width: 640px\)[\s\S]*?\.editorial-line\s*\{[\s\S]*?display:\s*inline/);
   assert.match(css, /p,[\s\S]*?li,[\s\S]*?dd\s*\{[\s\S]*?text-wrap:\s*pretty/);
+  assert.match(css, /h1,[\s\S]*?h2,[\s\S]*?h3\s*\{[\s\S]*?text-wrap:\s*balance/);
+  assert.match(css, /@media \(min-width: 641px\)[\s\S]*?\.contact \.editorial-line[\s\S]*?text-wrap:\s*balance/);
   assert.doesNotMatch(html, /Tu situación merece ser escuchada/);
-  assert.match(html, /El primer paso es conversar sobre tu situación\./);
+  assert.match(html, /¿Hablamos de tu caso\?/);
+});
+
+test("publica las áreas y la presentación profesional solicitadas", async () => {
+  const html = await read("index.html");
+  assert.match(html, /<h3>Usucapión<\/h3>/);
+  assert.match(html, /Asesoramiento integral para regularizar la situación dominial de inmuebles mediante el&nbsp;proceso de usucapión\./);
+  assert.match(html, /consultar%20por%20una%20usucapi%C3%B3n/);
+  assert.doesNotMatch(html, /divorcio/i);
+  assert.match(html, /Soy Rebeca Girotti, abogada\.<\/span>/);
+  assert.match(html, /asesoramiento jurídico con claridad, compromiso y atención personalizada\./);
+  assert.match(html, /cada persona merece ser escuchada y cada situación requiere un análisis particular\./);
+  assert.match(html, /Ejerzo la profesión de manera independiente\./);
+  assert.match(html, /Juntos podemos definir la alternativa jurídica más adecuada para tu situación\./);
+});
+
+test("aplica corrección ortotipográfica y redacción institucional", async () => {
+  const html = await read("index.html");
+  const privacy = await read("privacidad.html");
+  assert.match(html, /La atención se organiza exclusivamente con cita previa\.<\/span>/);
+  assert.match(html, /De este modo, puedo dedicar a cada caso el tiempo necesario\.<\/span>/);
+  assert.doesNotMatch(html, /tiempo necesario a cada situación/i);
+  assert.match(html, /Acordamos la fecha y la modalidad de atención: presencial en Chivilcoy o virtual\./);
+  assert.match(html, /<h3>Escribime por WhatsApp<\/h3>/);
+  assert.match(html, /Contame brevemente el motivo de la consulta y tus datos de contacto\./);
+  assert.doesNotMatch(html, /Escribinos|Contanos/);
+  assert.match(html, /Escribime para que podamos evaluar tu caso\./);
+  assert.match(html, /Hola%2C%20Dra\.%20Rebeca%20Girotti\.%20Quisiera/);
+  assert.doesNotMatch(html, /Hola%20Dra\./);
+  assert.match(privacy, /Actualmente, este sitio no instala cookies propias ni utiliza herramientas de medición\./);
+  assert.match(privacy, /Esta política se actualizará si el sitio incorpora/);
+  assert.doesNotMatch(privacy, /Este texto deberá revisarse/);
+});
+
+test("mantiene precisión y coherencia en la redacción final", async () => {
+  const html = await read("index.html");
+  assert.match(html, /reclamos derivados de obligaciones exigibles y respaldados por la&nbsp;documentación correspondiente\./);
+  assert.doesNotMatch(html, /obligaciones exigibles y documentación respaldatoria/);
+  assert.match(html, /De este modo, puedo dedicar a cada caso el tiempo necesario\./);
+  assert.doesNotMatch(html, /Así podemos dedicar/);
 });
 
 test("presenta el título de práctica en dos renglones de escritorio", async () => {
