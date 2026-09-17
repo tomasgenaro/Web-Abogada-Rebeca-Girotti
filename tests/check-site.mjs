@@ -31,6 +31,22 @@ test("protege la composición y los textos en pantallas móviles", async () => {
   assert.match(css, /@media \(max-width: 380px\)/);
 });
 
+test("mantiene el menú móvil fijo al viewport después de desplazarse", async () => {
+  const css = await read("css/styles.css");
+  const js = await read("js/main.js");
+  const menuRule = css.match(/\.mobile-menu\s*\{([^}]*)\}/)?.[1] ?? "";
+  const scrolledHeaderRule = css.match(/body\.menu-open \.site-header\.is-scrolled\s*\{([^}]*)\}/)?.[1] ?? "";
+
+  assert.match(scrolledHeaderRule, /-webkit-backdrop-filter:\s*none/);
+  assert.match(scrolledHeaderRule, /backdrop-filter:\s*none/);
+  assert.match(menuRule, /height:\s*100vh/);
+  assert.match(menuRule, /height:\s*100dvh/);
+  assert.match(menuRule, /overflow-y:\s*auto/);
+  assert.match(menuRule, /overscroll-behavior:\s*contain/);
+  assert.match(css, /@media \(max-width: 1050px\) and \(max-height: 700px\)[\s\S]*?\.mobile-menu\s*\{[\s\S]*?align-content:\s*start/);
+  assert.match(js, /mobileMenu\.scrollTop\s*=\s*0/);
+});
+
 test("aplica la redacción solicitada y conserva los saltos móviles", async () => {
   const html = await read("index.html");
   const css = await read("css/styles.css");

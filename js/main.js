@@ -68,6 +68,7 @@
     if (!menuButton || !mobileMenu) return;
 
     elementBeforeMenu = document.activeElement;
+    mobileMenu.scrollTop = 0;
     menuButton.setAttribute("aria-expanded", "true");
     menuButton.setAttribute("aria-label", "Cerrar menú");
     mobileMenu.classList.add("is-open");

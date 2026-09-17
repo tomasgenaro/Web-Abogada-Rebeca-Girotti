@@ -1,4 +1,4 @@
-# Estudio Dra. Rebeca Girotti — versión 1.10.4
+# Estudio Dra. Rebeca Girotti — versión 1.10.5
 
 Sitio institucional estático, mobile-first y sin dependencias de producción. Está desarrollado con HTML5 semántico, CSS3 y JavaScript puro, listo para alojarse en GitHub Pages, Cloudflare Pages, Netlify o Vercel.
 
@@ -10,7 +10,14 @@ Sitio institucional estático, mobile-first y sin dependencias de producción. E
 - SEO técnico básico: metadatos, Open Graph, JSON-LD, `robots.txt` y `sitemap.xml`.
 - Navegación accesible, foco visible, menú móvil con control de teclado y soporte para `prefers-reduced-motion`.
 
-## Cambios de la versión 1.10.4
+## Cambios de la versión 1.10.5
+
+- Corrige el menú móvil cuando se abre después de desplazarse por la página.
+- Mantiene el panel anclado a la pantalla completa, incluso con el encabezado en estado desplazado.
+- Permite recorrer el contenido del menú en celulares de poca altura sin recortes ni superposiciones.
+- Reinicia la posición interna del menú cada vez que se abre.
+
+## Mejoras heredadas de la versión 1.10.4
 
 - Completa la revisión editorial final sin modificar el diseño aprobado.
 - Precisa la descripción de “Procesos ejecutivos” y su relación con la documentación correspondiente.
