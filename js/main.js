@@ -175,10 +175,15 @@
       const targetId = link.getAttribute("href");
       if (!targetId || targetId === "#") return;
 
-      const target = document.querySelector(targetId);
+      const target = document.getElementById(targetId.slice(1));
       if (!target) return;
 
       event.preventDefault();
+      if (!target.hasAttribute("tabindex")) {
+        target.setAttribute("tabindex", "-1");
+        target.addEventListener("blur", () => target.removeAttribute("tabindex"), { once: true });
+      }
+      target.focus({ preventScroll: true });
       target.scrollIntoView({ behavior: reduceMotion.matches ? "auto" : "smooth", block: "start" });
       window.history.replaceState(null, "", targetId);
     });

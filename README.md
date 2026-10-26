@@ -10,6 +10,14 @@ Sitio institucional estático, mobile-first y sin dependencias de producción. E
 - SEO técnico básico: metadatos, Open Graph, JSON-LD, `robots.txt` y `sitemap.xml`.
 - Navegación accesible, foco visible, menú móvil con control de teclado y soporte para `prefers-reduced-motion`.
 
+## Correcciones de la revisión local
+
+- Evita recortes de Modalidad en tabletas desde 821 px.
+- Traslada el foco al destino al activar enlaces internos y “Saltar al contenido”.
+- Corrige estilos y enlaces de la página 404 en rutas anidadas; las rutas parten de la raíz del dominio configurado en CNAME.
+- Amplía textos secundarios sin cambiar la estructura de la página.
+- Añade una imagen social de 1200 × 630 px y metadatos Open Graph y Twitter.
+
 ## Cambios de la versión 1.10.5
 
 - Corrige el menú móvil cuando se abre después de desplazarse por la página.

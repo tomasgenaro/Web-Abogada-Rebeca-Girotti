@@ -334,7 +334,7 @@ a {
 
 .brand-role {
   color: var(--lavender);
-  font-size: 0.46rem;
+  font-size: 0.65rem;
   font-weight: 740;
   letter-spacing: 0.19em;
   text-transform: uppercase;
@@ -351,7 +351,7 @@ a {
   position: relative;
   padding: 10px 0;
   color: rgba(255, 255, 255, 0.72);
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: 650;
   transition: color 250ms ease;
 }
@@ -736,7 +736,7 @@ a {
 .process-card dt {
   margin-bottom: 8px;
   color: var(--muted);
-  font-size: 0.56rem;
+  font-size: 0.65rem;
   font-weight: 760;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -872,7 +872,7 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.67rem;
+  font-size: 0.75rem;
   font-weight: 760;
 }
 
@@ -925,7 +925,7 @@ a {
 
 .process-grid {
   display: grid;
-  grid-template-columns: minmax(320px, 0.86fr) minmax(440px, 1.14fr);
+  grid-template-columns: minmax(320px, 0.86fr) minmax(0, 1.14fr);
   align-items: center;
   gap: clamp(60px, 9vw, 140px);
 }
@@ -1105,7 +1105,7 @@ a {
 
 .contact-list span:not(.social-links span) {
   color: var(--lavender);
-  font-size: 0.53rem;
+  font-size: 0.65rem;
   font-weight: 760;
   letter-spacing: 0.13em;
   text-transform: uppercase;
@@ -1200,7 +1200,7 @@ a {
 
 .servicetech-credit span {
   grid-row: 1;
-  font-size: 0.48rem;
+  font-size: 0.65rem;
   letter-spacing: 0.11em;
   text-transform: uppercase;
 }
@@ -1614,7 +1614,7 @@ a {
 
   .credentials dt,
   .process-card dt {
-    font-size: 0.59rem;
+    font-size: 0.65rem;
   }
 
   .credentials dd,
@@ -1768,7 +1768,7 @@ a {
   }
 
   .contact-list span:not(.social-links span) {
-    font-size: 0.62rem;
+    font-size: 0.65rem;
   }
 
   .contact-list a,
@@ -1823,7 +1823,7 @@ a {
   }
 
   .servicetech-credit span {
-    font-size: 0.56rem;
+    font-size: 0.65rem;
   }
 
   .servicetech-credit strong {
