@@ -155,7 +155,7 @@ test("mantiene el footer sin navegación duplicada y acredita a ServicioTech", a
   const footer = html.match(/<footer[\s\S]*?<\/footer>/i)?.[0] ?? "";
   assert.doesNotMatch(footer, /<nav\b/i);
   assert.doesNotMatch(footer, /class="footer-name"/);
-  assert.match(footer, /https:\/\/tomasgenaro\.github\.io\/ServicioTechWeb\//);
+  assert.match(footer, /https:\/\/www\.serviciotech\.com\.ar\//);
   assert.match(footer, /class="servicetech-credit"/);
 });
 
