@@ -55,6 +55,7 @@
 
     menuButton.setAttribute("aria-expanded", "false");
     menuButton.setAttribute("aria-label", "Abrir menú");
+    mobileMenu.inert = true;
     mobileMenu.classList.remove("is-open");
     mobileMenu.setAttribute("aria-hidden", "true");
     document.body.classList.remove("menu-open");
@@ -68,6 +69,7 @@
     if (!menuButton || !mobileMenu) return;
 
     elementBeforeMenu = document.activeElement;
+    mobileMenu.inert = false;
     mobileMenu.scrollTop = 0;
     menuButton.setAttribute("aria-expanded", "true");
     menuButton.setAttribute("aria-label", "Cerrar menú");
@@ -76,7 +78,7 @@
     document.body.classList.add("menu-open");
 
     const focusable = getMenuFocusableElements();
-    window.setTimeout(() => focusable[0]?.focus(), reduceMotion.matches ? 0 : 180);
+    focusable[0]?.focus({ preventScroll: true });
   };
 
   menuButton?.addEventListener("click", () => {
@@ -103,7 +105,7 @@
     const focusable = getMenuFocusableElements();
     if (!focusable.length) return;
 
-    const first = focusable[0];
+    const first = menuButton;
     const last = focusable[focusable.length - 1];
 
     if (event.shiftKey && document.activeElement === first) {
